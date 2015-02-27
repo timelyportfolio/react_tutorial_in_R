@@ -1,4 +1,6 @@
-Complete this tutorial [Learn how to use React in your own project.](http://facebook.github.io/react/docs/getting-started.html) in R using the [`htmltools`](https://github.com/rstudio/htmltools) package.  Please note that most of this is copy/paste from the tutorial, so nearly all attribution belongs to the original authors from the Facebook React Team and is [BSD licensed](./LICENSE).  Content regarding licensing has been retained below.  For the tiny bits/pieces/translations that I have added, the [MIT license](./LICENSE) applies.
+## React Tutorial in R with htmltools
+
+Complete the tutorial [Learn how to use React in your own project.](http://facebook.github.io/react/docs/getting-started.html) in R using the [`htmltools`](https://github.com/rstudio/htmltools) package.  Please note that most of this is copied and pasted from the tutorial, so nearly all attribution belongs to the original authors from the Facebook React Team and is [BSD licensed](./LICENSE).  Content regarding licensing has been retained below.  For the tiny bits/pieces/translations that I have added, the [MIT license](./LICENSE) applies.
 
 
 ## Original Important Contents of Facebook Readme.md
