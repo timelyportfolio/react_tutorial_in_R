@@ -5,7 +5,7 @@ tagList(
   tags$div(
     id = "content"
   )
-  ,tags$script(type = "text/jsx"
+  ,tags$script(type = "text/babel"
     ,'
     // tutorial3.js
     var CommentBox = React.createClass({
@@ -41,7 +41,7 @@ tagList(
       }
     });
 
-    React.render(
+    ReactDOM.render(
       <CommentBox />,
       document.getElementById("content")
     );
@@ -52,15 +52,27 @@ tagList(
   attachDependencies(list(
     htmlDependency(
       name = "react"
-      ,version = "0.12.2"
+      ,version = "0.14.8"
       ,src = c(paste0(getwd(),"/build"))
-      ,script = c("react.js","JSXTransformer.js")
+      ,script = c("react.min.js","react-dom.min.js")
     )
     ,htmlDependency(
+      name = "babel-browser"
+      ,version = "5.8.23"
+      ,src = c(href="http://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23")
+      ,script = c("browser.min.js")
+    )    
+    ,htmlDependency(
       name = "jquery"
-      ,version = "1.10.0"
-      ,src = c(href = "http://code.jquery.com")
-      ,script = c("jquery-1.10.0.min.js")
+      ,version = "2.2.0"
+      ,src = c(href = "http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/")
+      ,script = c("jquery.min.js")
+    )
+    ,htmlDependency(
+      name = "marked"
+      ,version = "0.3.5"
+      ,src = c(href = "http://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/")
+      ,script = c("marked.min.js")
     )
   )) %>>%
   html_print
