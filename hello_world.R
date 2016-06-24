@@ -29,3 +29,24 @@ tagList(
     )
   )) %>>%
   html_print
+
+
+# using reactR
+# devtools::install_github("timelyportfolio/reactR")
+
+library(reactR)
+library(htmltools)
+
+tagList(
+  tags$div(id = "example")
+  ,tags$script(babel_transform(
+"
+      ReactDOM.render(
+        <h1>Hello, world!</h1>,
+        document.getElementById('example')
+      );
+"
+  ))
+) %>>%
+  attachDependencies(html_dependency_react()) %>>%
+  browsable()
