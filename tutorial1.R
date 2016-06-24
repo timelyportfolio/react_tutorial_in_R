@@ -51,3 +51,47 @@ tagList(
     )    
   )) %>>%
   html_print
+
+
+# use reactR --------------------------------------------------------------
+library(htmltools)
+library(reactR)
+
+tagList(
+  tags$div(id = "content"),
+  tags$script(babel_transform(
+'
+ // tutorial1.js
+ var CommentBox = React.createClass({
+  render: function() {
+    return (
+      <div className="commentBox">
+        Hello, world! I am a CommentBox.
+      </div>
+    );
+  }
+ });
+ ReactDOM.render(
+  <CommentBox />,
+  document.getElementById("content")
+ );
+'
+  ))
+) %>>%
+  attachDependencies(list(
+    html_dependency_react(),
+    htmlDependency(
+      name = "jquery"
+      ,version = "2.2.0"
+      ,src = c(href = "http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/")
+      ,script = c("jquery.min.js")
+    ),
+    htmlDependency(
+      name = "marked"
+      ,version = "0.3.5"
+      ,src = c(href = "http://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/")
+      ,script = c("marked.min.js")
+    )    
+  )) %>>%
+  browsable()
+
